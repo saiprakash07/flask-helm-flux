@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  REDIS_HOST: {{ include "flask.fullname" . }}-redis.default.svc.cluster.local
+  REDIS_PORT: "6379"

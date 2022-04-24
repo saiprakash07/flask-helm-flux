@@ -1,0 +1,48 @@
+replicaCount: 1
+
+image:
+  repository: docker pull saiprakash07/flask
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imageRedis:
+  repository: redis
+  pullPolicy: IfNotPresent
+  tag: alpine
+
+imagePullSecrets:
+  - name: docker-login
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: LoadBalancer
+  port: 5000
+
+serviceRedis:
+  port: 6379
+
+ingress:
+  enabled: true
+  className: ""
+  annotations: 
+    kubernetes.io/ingress.class: addon-http-application-routing
+  hosts:
+    - host: "localhost"
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: dou-flask-app
+            servicePort: 5000
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
