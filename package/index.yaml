@@ -1,0 +1,16 @@
+apiVersion: v1
+entries:
+  flaskapp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-24T06:16:48.981060221Z"
+    description: Flask App with Redis DB
+    digest: f31bf46c7d2e15191f4a863476e589d14d2f6d9f3cc543d16f18677946b6591d
+    keywords:
+    - flask
+    - redis
+    name: flaskapp
+    urls:
+    - https://saiprakash07.github.io/flask-helm-flux/package/flaskapp-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-04-24T06:16:48.980665252Z"
