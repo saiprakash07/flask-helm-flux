@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: saiprakash07/flask
   pullPolicy: IfNotPresent
-  tag: 22
+  tag: 24
 
 imageRedis:
   repository: redis
