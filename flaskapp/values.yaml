@@ -1,19 +1,14 @@
 replicaCount: 1
 
 image:
-  repository: docker pull saiprakash07/flask
+  repository: saiprakash07/flask
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: 22
 
 imageRedis:
   repository: redis
   pullPolicy: IfNotPresent
   tag: alpine
-
-imagePullSecrets:
-  - name: docker-login
-nameOverride: ""
-fullnameOverride: ""
 
 service:
   type: LoadBalancer
